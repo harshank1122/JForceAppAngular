@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="container">
+      <h1>Candidate List</h1>
+      <button class="mt-5 btn btn-primary" (click)="logout()">Log Out</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Vote Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let candidate of candidates">
+            <td>{{ candidate.name }}</td>
+            <td>{{ candidate.voteCount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

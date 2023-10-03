@@ -1,0 +1,42 @@
+<div  class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="container mt-4"  *ngIf="voterStatusor === 0">
+      <h2>Vote for Your Favorite Candidate</h2>
+      <button class="mt-4 btn btn-primary" (click)="logout()">Log Out</button>
+      <form (ngSubmit)="submitVote()">
+        <div class="form-group">
+          <label style="font-size: 20px;">Select a Candidate:</label>
+          <div> 
+            <input type="radio" name="candidate" [(ngModel)]="selectedCandidate" value="1">
+            <label  style="font-size: 18px; padding-left: 10px;">Emily</label>
+          </div>
+          <div> 
+            <input type="radio" name="candidate" [(ngModel)]="selectedCandidate" value="2">
+            <label  style="font-size: 18px; padding-left: 10px;">Michaelo</label>
+          </div>
+          <div> 
+            <input type="radio" name="candidate" [(ngModel)]="selectedCandidate" value="3">
+            <label  style="font-size: 18px; padding-left: 10px;">Sarah</label>
+          </div>
+          <div> 
+            <input type="radio" name="candidate" [(ngModel)]="selectedCandidate" value="4">
+            <label  style="font-size: 18px; padding-left: 10px;">David</label>
+          </div>
+        </div>
+  
+        <button type="submit" class="mt-4 btn btn-primary" [disabled]="hasVoted" style="font-size: 20px; padding: 10px 20px;">Submit Vote</button>
+      </form>
+      
+      <div *ngIf="hasVoted" class="alert alert-success mt-3">
+        You have successfully voted
+      </div>
+    </div>
+    <div class="container mt-4"  *ngIf="voterStatusor === 1">
+      <button class="mt-4 btn btn-primary" (click)="logout()">Log Out</button>
+      <div  class="alert alert-success mt-3">
+        You have Already voted
+      </div>
+    </div>
+  </div>
+</div>
+
